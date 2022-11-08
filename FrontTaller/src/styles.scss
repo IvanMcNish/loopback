@@ -1,10 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~ng-zorro-antd/ng-zorro-antd.min.css";
 
-.cls-content-page {
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+button {
+    border-radius: 50px;
+    background-color: blue !important;
     padding: 30px;
 }
 
-.cls-title-page {
-    padding: 20px 30px 0 30px;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

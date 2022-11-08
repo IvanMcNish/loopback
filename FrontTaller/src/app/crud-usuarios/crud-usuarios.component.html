@@ -1,85 +1,112 @@
-<div>
+<div class="cls-content-page">
   <div
-    style="display: flex; justify-content: space-between; align-items: center"
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    "
   >
-    <h3>Bienvenidos al curso de angular</h3>
-
-    <div>
+    <mat-form-field class="example-form-field" appearance="outline">
+      <mat-label>Buscar</mat-label>
       <input
+        matInput
         type="text"
-        style="margin-right: 10px"
-        placeholder="Buscar"
-        [(ngModel)]="campoBuscar"
+        [(ngModel)]="value"
+        (focus)="focusBuscar()"
+        (blur)="blurBuscar()"
       />
-      <button (click)="getUsuariosFilter()">Buscar</button>
-    </div>
-
-    <!-- <cambio-contrasenia
-      [user]="userCurrent"
-      (cambioNombre)="updateUserName($event)"
-    ></cambio-contrasenia> -->
-
-    <div>
-      <label for="">Sede: </label>
-      <select
-        name=""
-        id=""
-        style="width: 180px"
-        [(ngModel)]="sedeCurrent"
-        (change)="changeSede()"
+      <button
+        *ngIf="value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="value = ''"
       >
-        <option [value]="sede.idSede" *ngFor="let sede of sedes">
-          {{ sede.nombre }}
-        </option>
-      </select>
-    </div>
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!-- <editor-nombre
+      [nombre]="nombreUsuarioSeleccionado"
+      (salidaCambioNombre)="cambiarNombreUsuario($event)"
+    ></editor-nombre> -->
   </div>
 
-  <hr />
-
-  <div class="cls-form" [formGroup]="formUser">
+  <div
+    style="
+      display: inline-flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    "
+    [formGroup]="formUser"
+  >
     <div>
       <label for="">Nombre</label>
       <input type="text" formControlName="nombre" />
     </div>
+
+    <!-- <div>
+      <label for="">Fecha de nacimiento</label>
+      <input type="text" formControlName="fechaNacimiento" />
+    </div> -->
+
     <div>
       <label for="">Teléfono</label>
-      <input type="tel" formControlName="telefono" />
-    </div>
-    <div>
-      <label for="">Fecha nacimiento</label>
-      <input type="date" formControlName="fechaNacimiento" />
-    </div>
-    <div>
-      <label for="">Contraseña</label>
-      <input type="password" formControlName="contrasenia" />
+      <input type="text" formControlName="telefono" />
     </div>
 
-    <button (click)="saveUser()" style="height: 28px">Agregar</button>
+    <div>
+      <label for="">Tipo</label>
+      <input type="text" formControlName="tipoUsuario" />
+    </div>
+
+    <button
+      (click)="saveUser()"
+      style="color: #fff !important"
+      mat-button
+      color="primary"
+    >
+      Agregar
+    </button>
   </div>
 
-  <hr />
+  <div>
+    <table mat-table [dataSource]="datos" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
 
-  <nz-table #basicTable [nzData]="listOfData">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Teléfono</th>
-        <th>Fecha</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let data of basicTable.data" (click)="clickUser(data)">
-        <td>{{ data.nombre }}</td>
-        <td>{{ data.telefono }}</td>
-        <td>{{ data.fechaNacimiento }}</td>
-        <td>
-          <a (click)="editUser()">Editar</a>
-          <nz-divider nzType="vertical"></nz-divider>
-          <a (click)="deleteUser(data.idUsuario)">Delete</a>
+      <!-- Position Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="telefono">
+        <th mat-header-cell *matHeaderCellDef>Teléfono</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.telefono }}
         </td>
-      </tr>
-    </tbody>
-  </nz-table>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="tipoUsuario">
+        <th mat-header-cell *matHeaderCellDef>Tipo</th>
+        <td mat-cell *matCellDef="let element">{{ element.tipoUsuario }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="fechaNacimiento">
+        <th mat-header-cell *matHeaderCellDef>Fecha nacimiento</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.fechaNacimiento }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
 </div>

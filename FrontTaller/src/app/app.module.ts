@@ -4,37 +4,47 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CrudUsuariosComponent } from './crud-usuarios/crud-usuarios.component';
-import { NzTableModule } from 'ng-zorro-antd/table';
-import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
-import { LayoutComponent } from './layout/layout.component';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { CrudVehiculosComponent } from './crud-vehiculos/crud-vehiculos.component';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CambioContraseniaComponent } from './crud-usuarios/cambio-contrasenia/cambio-contrasenia.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { LayoutComponent } from './layout/layout.component';
+import { ToolbarComponent } from './layout/toolbar/toolbar.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { ContentComponent } from './layout/content/content.component';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { EditorNombreComponent } from './crud-usuarios/editor-nombre/editor-nombre.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrudUsuariosComponent,
-    LayoutComponent,
     CrudVehiculosComponent,
-    CambioContraseniaComponent,
+    LayoutComponent,
+    ToolbarComponent,
+    SidebarComponent,
+    FooterComponent,
+    ContentComponent,
+    EditorNombreComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NzTableModule,
-    NzDividerModule,
-    NzLayoutModule,
-    NzBreadCrumbModule,
-    NzButtonModule,
-    NzSpaceModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatIconModule,
     FormsModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatButtonModule,
     HttpClientModule,
     ReactiveFormsModule,
   ],

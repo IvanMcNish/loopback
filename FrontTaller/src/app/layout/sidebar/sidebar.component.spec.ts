@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrudUsuariosComponent } from './crud-usuarios.component';
+import { SidebarComponent } from './sidebar.component';
 
-describe('CrudUsuariosComponent', () => {
-  let component: CrudUsuariosComponent;
-  let fixture: ComponentFixture<CrudUsuariosComponent>;
+describe('SidebarComponent', () => {
+  let component: SidebarComponent;
+  let fixture: ComponentFixture<SidebarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CrudUsuariosComponent ]
+      declarations: [ SidebarComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CrudUsuariosComponent);
+    fixture = TestBed.createComponent(SidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

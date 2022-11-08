@@ -1,0 +1,16 @@
+<div style="display: flex; gap: 10px; position: relative; top: -9px">
+  <input
+    [(ngModel)]="nombre"
+    placeholder="Nombre"
+    type="text"
+    style="
+      height: 35px;
+      border: solid 1px #e2e2e2;
+      border-radius: 7px;
+      padding: 0 15px;
+    "
+  />
+  <button (click)="cambiarNombre()" mat-raised-button color="accent">
+    Editar Nombre
+  </button>
+</div>
