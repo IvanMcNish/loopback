@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -54,6 +56,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     ReactiveFormsModule,
     MatDialogModule,
     MatFormFieldModule,
+    MatMenuModule,
+    
+    
+    
     
   ],
   providers: [],

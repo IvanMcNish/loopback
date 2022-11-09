@@ -3,13 +3,24 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import { MatTableDataSource } from "@angular/material/table";
 import { RequestBackendService } from "./../request-backend.service";
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import Swal from "sweetalert2";
 
+
+
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success ',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false //cambiarlo a false cuando se vincule con boostrap
+})
 
 @Component({
   selector: "crud-usuarios",
   templateUrl: "./crud-usuarios.component.html",
   styleUrls: ["./crud-usuarios.component.scss"],
 })
+
 
 
 export class CrudUsuariosComponent implements OnInit {
@@ -98,13 +109,7 @@ export class CrudUsuariosComponent implements OnInit {
 
   //crud de iconos
 
-  eliminar(): void {
-    this.dialog.open(EliminarDialog, {
-      width: '50%',
-      height: "auto",
-      
-    });
-  }
+
   editar(): void {
     this.dialog.open(EditarDialog, {
       width: '50%',
@@ -112,24 +117,44 @@ export class CrudUsuariosComponent implements OnInit {
       
     });
   }
-  actualizar(): void {
-    this.dialog.open(ActualizarDialog, {
-      width: '50%',
-      height: "auto",
-      
-    });
 
+
+  prueba(){
+    swalWithBootstrapButtons.fire({
+      title: 'Eliminar',
+      text: "¿Estás deguro de remover este elemento?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, remover!',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+          'Eliminado!',
+          'El elemneto se ha eliminado con exito.',
+          'success'
+        )
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'El proceso se ha cancelado',
+          'error'
+        )
+      }
+    })
   }
 
+  
+
 }
 
-@Component({
-  selector: 'eliminar',
-  templateUrl: 'eliminar.html',
-})
-export class EliminarDialog {
-  constructor(public dialogRef: MatDialogRef<EliminarDialog>) {}
-}
+
+
+
 
 @Component({
   selector: 'editar',
@@ -139,11 +164,4 @@ export class EditarDialog {
   constructor(public dialogRef: MatDialogRef<EditarDialog>) {}
 }
 
-
-@Component({
-  selector: 'actualizar',
-  templateUrl: 'actualizar.html',
-})
-export class ActualizarDialog {
-  constructor(public dialogRef: MatDialogRef<ActualizarDialog>) {}
-}
+//alertas
