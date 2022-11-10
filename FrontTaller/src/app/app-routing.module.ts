@@ -5,8 +5,8 @@ import { CrudVehiculosComponent } from './crud-vehiculos/crud-vehiculos.componen
 
 const routes: Routes = [
   { path: '', component: CrudUsuariosComponent },
-  { path: 'usuarios', component: CrudUsuariosComponent },
-  { path: 'vehiculos', component: CrudVehiculosComponent },
+  { path: 'jefeoperacion', component: CrudUsuariosComponent },
+  { path: 'cliente', component: CrudVehiculosComponent },
 ];
 
 @NgModule({

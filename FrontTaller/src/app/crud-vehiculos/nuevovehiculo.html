@@ -1,92 +1,8 @@
 <div>
-    <div style="    background: blue;
-    color: white;
-    height: 27px;">
-        <h3>Agregar cliente</h3>
-    </div>
+
     <div>
-        <form style="    margin: 20px 0 10px;" class="row g-3 needs-validation" novalidate>
+        <form class="row g-3 needs-validation" novalidate>
 
-            <div style="    margin: 5px 0 10px;" class="row">
-                <div class="col">
-                    <label for="validationCustom01" class="form-label">Tipo de documento</label>
-                </div>
-                <div class="col">
-                    <select class="form-select" id="validationCustom04" required>
-                        <option selected disabled value="">Seleccionar</option>
-                        <option>CC</option>
-                        <option>Pasasporte</option>
-                    </select>
-                    <div class="invalid-feedback">Campo requerido</div>
-                </div>
-            </div>
-
-            <div style="    margin: 5px 0 10px;" class="row ">
-                <div class="col">
-                    <label for="validationCustom01" class="form-label">Cedula</label>
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control" id="validationCustom01" required />
-                    <div class="invalid-feedback">Campo requerido</div>
-                </div>
-            </div>
-
-            <div style="    margin: 5px 0 10px;" class="row ">
-                <div class="col">
-                    <label for="validationCustom01" class="form-label">Nombre</label>
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control" id="validationCustom01" required />
-                    <div class="invalid-feedback">Campo requerido</div>
-                </div>
-            </div>
-            <div style="    margin: 5px 0 10px;" class="row">
-                <div class="col">
-                    <label for="validationCustom02" class="form-label">Teléfono</label>
-                </div>
-
-                <div class="col">
-                    <input type="text" class="form-control" id="validationCustom02" required />
-                    <div class="invalid-feedback">Campo requerido</div>
-                </div>
-            </div>
-
-            <div style="    margin: 5px 0 10px;" class="row">
-                <div class="col">
-                    <label for="validationCustom03" class="form-label">Fecha de nacimiento</label>
-                </div>
-                <div class="col">
-                    <input type="date" class="form-control" id="validationCustom03" required />
-                    <div class="invalid-feedback">Campo requerido.</div>
-                </div>
-            </div>
-
-            <div style="    margin: 5px 0 10px;" class="row">
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Ciudad</label>
-                </div>
-
-                <div class="col">
-                    <select class="form-select" id="validationCustom04" required>
-                        <option selected disabled value="">Seleccionar</option>
-                        <option>...</option>
-                    </select>
-                    <div class="invalid-feedback">Campo requerido.</div>
-                </div>
-            </div>
-            <div style="    margin: 5px 0 10px;" class="row">
-                <div class="col">
-                    <label for="validationCustomUsername" class="form-label">Correo</label>
-                </div>
-
-                <div class="col">
-                    <div class="input-group has-validation">
-                        <input type="email" class="form-control" id="validationCustomUsername"
-                            aria-describedby="inputGroupPrepend" required />
-                        <div class="invalid-feedback">Campo requerido.</div>
-                    </div>
-                </div>
-            </div>
             <div style="    background: blue;
             color: white;
             height: 27px;">
@@ -208,8 +124,9 @@
 
             <div class="col-12">
                 <!--se debe cambiar el submint por un button pero en el aler que haga el submint-->
-                <button (click)="guardar()"  style="width: 32%;" class="btn btn-outline-success" type="button">Agregar </button>
-                
+                <button (click)="guardar()" style="width: 32%;" class="btn btn-outline-success" type="button">Agregar
+                </button>
+
             </div>
         </form>
     </div>

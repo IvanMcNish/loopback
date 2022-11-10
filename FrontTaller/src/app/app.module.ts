@@ -22,7 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -57,6 +57,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDialogModule,
     MatFormFieldModule,
     MatMenuModule,
+    MatPaginatorModule,
     
     
     

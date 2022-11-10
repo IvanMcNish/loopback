@@ -1,8 +1,23 @@
-<p>vehiculos works!</p>
-
-<div>
-  
+<div style="align-items: center;
+display: flex;
+justify-content: flex-end;">
+  <button style="width: 50px;
+  height: 50px;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon style="    font-size: 34px;
+      width: 100%;">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="nuevovehi()">
+        <mat-icon>directions_car</mat-icon>
+        <span>Agregar vehículo</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon style="color: #f44336;">exit_to_app</mat-icon>
+        <span>Salir</span>
+      </button>
+    </mat-menu>
 </div>
+
 
 <div class="cls-content-page">
   <div>
@@ -16,39 +31,49 @@
     <table mat-table [dataSource]="datos" class="mat-elevation-z8">
 
       <!-- Position Column -->
-      <ng-container matColumnDef="nombre">
+      <ng-container matColumnDef="idPlaca">
         <th mat-header-cell *matHeaderCellDef> Placa </th>
         <td mat-cell *matCellDef="let element"> {{element.idPlaca}} </td>
       </ng-container>
 
       <!-- Name Column -->
-      <ng-container matColumnDef="telefono">
-        <th mat-header-cell *matHeaderCellDef> Propietario </th>
-        <td mat-cell *matCellDef="let element"> {{element.propietarioId}} </td>
+      <ng-container matColumnDef="tipo">
+        <th mat-header-cell *matHeaderCellDef> Tipo de vehículo </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
       </ng-container>
 
       <!-- Weight Column -->
-      <ng-container matColumnDef="tipoUsuario">
+      <ng-container matColumnDef="marca">
         <th mat-header-cell *matHeaderCellDef> Marca </th>
         <td mat-cell *matCellDef="let element"> {{element.marca}} </td>
       </ng-container>
 
       <!-- Symbol Column -->
-      <ng-container matColumnDef="fechaNacimiento">
-        <th mat-header-cell *matHeaderCellDef> C.C. </th>
+      <ng-container matColumnDef="cilindraje">
+        <th mat-header-cell *matHeaderCellDef> Cilindraje </th>
         <td mat-cell *matCellDef="let element"> {{element.cilindraje}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="propietarioId">
+        <th mat-header-cell *matHeaderCellDef> Propietario </th>
+        <td mat-cell *matCellDef="let element"> {{element.propietarioId}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="anio">
+        <th mat-header-cell *matHeaderCellDef> Modelo </th>
+        <td mat-cell *matCellDef="let element"> {{element.anio}} </td>
       </ng-container>
 
       <ng-container matColumnDef="Gestion">
         <th mat-header-cell *matHeaderCellDef> Gestión </th>
         <td mat-cell *matCellDef="let element">
 
-
-
           <mat-icon class="cls-icon" (click)="prueba()" style="color: red;">delete_forever</mat-icon>
           <mat-icon class="cls-icon" (click)="editar()" style="color: green;">edit</mat-icon>
-          <mat-icon class="cls-icon"  style="color: blue;">sync</mat-icon>
-
+          <mat-icon class="cls-icon" (click)="trabajo()" style="color: blue;">settings</mat-icon>
+          
         </td>
 
       </ng-container>

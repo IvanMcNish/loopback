@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import { MatTableDataSource } from "@angular/material/table";
 import { RequestBackendService } from "./../request-backend.service";
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+
 import Swal from "sweetalert2";
 
 
@@ -23,7 +24,7 @@ export class CrudVehiculosComponent implements OnInit {
   //databes
   datos: any = [];
   nombreUsuarioSeleccionado = "";
-  displayedColumns: string[] = ["nombre", "telefono", "tipoUsuario", "fechaNacimiento", "Gestion",
+  displayedColumns: string[] = ["idPlaca","tipo", "marca", "cilindraje", "propietarioId","anio", "Gestion",
   ];
   dataSource = new MatTableDataSource(this.datos);
   applyFilter(event: Event) {
@@ -40,12 +41,13 @@ export class CrudVehiculosComponent implements OnInit {
     this.getUsers();
 
     this.formUser = this.fb.group({
-      nombre: [""],
-      telefono: [""],
-      tipoUsuario: [""],
-      fechaNacimiento: ["2022-11-08T00:22:27.812Z"],
-      contrasenia: ["111"],
-      sedeId: ["63557cfb71cf34a13bd99ad7"],
+      idPlaca:[""],
+      tipo: [""],
+      marca: [""],
+      cilindraje: [""],
+      propietarioId: ["2022-11-08T00:22:27.812Z"],
+      anio:[""],
+      
     });
   }
 
@@ -107,37 +109,37 @@ export class CrudVehiculosComponent implements OnInit {
     });
   }
 
+  trabajo(): void {
+    Swal.fire('Esta acción se encuentra en desarrollo')
+  }  
 
-  prueba(){
-    swalWithBootstrapButtons.fire({
-      title: 'Eliminar',
-      text: "¿Estás deguro de remover este elemento?",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Si, remover!',
-      cancelButtonText: 'No, cancelar!',
-      reverseButtons: true
-    }).then((result) => {
-      if (result.isConfirmed) {
-        swalWithBootstrapButtons.fire(
-          'Eliminado!',
-          'El elemneto se ha eliminado con exito.',
-          'success'
-        )
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire(
-          'Cancelado',
-          'El proceso se ha cancelado',
-          'error'
-        )
-      }
-    })
+
+  prueba(){Swal.fire({
+    text: "¿Seguro desea eliminar este registro?",
+    icon: 'warning',
+    confirmButtonColor: 'green',
+    confirmButtonText: 'Si, eliminar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        "",
+        'Registro eliminado con exito',
+        'success',
+        
+      )
+    }
+  })
   }
 
-  
+  nuevovehi(): void {
+    this.dialog.open(NuevoVehiDialog, {
+      width: '50%',
+      height: "500px",
+
+      
+    });
+
+  }
 
 }
 
@@ -151,5 +153,29 @@ export class CrudVehiculosComponent implements OnInit {
 })
 export class EditarDialog {
   constructor(public dialogRef: MatDialogRef<EditarDialog>) {}
+  guardar() {
+    Swal.fire({      
+      icon: 'success',
+      title: 'Registro actualizado',
+      showConfirmButton: true,
+    })
+  }
 }
 
+@Component({
+  selector: 'nuevovehiculo',
+  templateUrl: 'nuevovehiculo.html',
+})
+export class NuevoVehiDialog {
+  constructor(public dialogRef: MatDialogRef<NuevoVehiDialog>) {}
+
+  guardar() {
+    Swal.fire({      
+      icon: 'success',
+      title: 'Registro guardado',
+      showConfirmButton: true,
+    })
+
+  }
+  
+}

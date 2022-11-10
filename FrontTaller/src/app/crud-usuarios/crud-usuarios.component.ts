@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 
 
 
+
 @Component({
   selector: "crud-usuarios",
   templateUrl: "./crud-usuarios.component.html",
@@ -21,7 +22,7 @@ export class CrudUsuariosComponent implements OnInit {
   //databes
   datos: any = [];
   nombreUsuarioSeleccionado = "";
-  displayedColumns: string[] = ["nombre", "telefono", "tipoUsuario", "fechaNacimiento", "Gestion",
+  displayedColumns: string[] = ["idPropietario","nombre", "telefono","correo","ciudad","sedeId","Gestion",
   ];
   dataSource = new MatTableDataSource(this.datos);
   applyFilter(event: Event) {
@@ -38,10 +39,9 @@ export class CrudUsuariosComponent implements OnInit {
     this.getUsers();
 
     this.formUser = this.fb.group({
+      idPropietario:[""],
       nombre: [""],
       telefono: [""],
-      tipoUsuario: [""],
-      fechaNacimiento: ["2022-11-08T00:22:27.812Z"],
       contrasenia: ["111"],
       sedeId: ["63557cfb71cf34a13bd99ad7"],
     });
@@ -114,8 +114,11 @@ export class CrudUsuariosComponent implements OnInit {
   nuevocliente(): void {
     this.dialog.open(NuevoclieDialog, {
       width: '50%',
-      height: "auto",
+      height: "500px",
+
+      
     });
+
   }
 
   nuevomeca():void {
@@ -123,13 +126,6 @@ export class CrudUsuariosComponent implements OnInit {
       width: "50%",
       height: "auto",
     });
-  }
-
-  clienteVehi():void {
-    this.dialog.open(clienteVehiDialog,{
-      width: "50%",
-      height:"auto"
-    })
   }
 
 
@@ -153,6 +149,7 @@ export class CrudUsuariosComponent implements OnInit {
   }
 
   
+  
 
 }
 
@@ -166,6 +163,13 @@ export class CrudUsuariosComponent implements OnInit {
 })
 export class EditarDialog {
   constructor(public dialogRef: MatDialogRef<EditarDialog>) {}
+  guardar() {
+    Swal.fire({      
+      icon: 'success',
+      title: 'Registro actualizado',
+      showConfirmButton: true,
+    })
+  }
 }
 
 @Component({
@@ -174,6 +178,16 @@ export class EditarDialog {
 })
 export class NuevoclieDialog {
   constructor(public dialogRef: MatDialogRef<NuevoclieDialog>) {}
+
+  guardar() {
+    Swal.fire({      
+      icon: 'success',
+      title: 'Registro guardado',
+      showConfirmButton: true,
+    })
+
+  }
+  
 }
 
 @Component({
@@ -182,6 +196,15 @@ export class NuevoclieDialog {
 })
 export class NuevoMecaDialog {
   constructor(public dialogRef: MatDialogRef<NuevoMecaDialog>) {}
+
+  guardar() {
+    Swal.fire({      
+      icon: 'success',
+      title: 'Registro guardado',
+      showConfirmButton: true,
+    })
+
+  }
 }
 
 @Component({
