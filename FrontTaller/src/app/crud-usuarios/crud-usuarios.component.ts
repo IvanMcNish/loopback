@@ -7,13 +7,6 @@ import Swal from "sweetalert2";
 
 
 
-const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success ',
-    cancelButton: 'btn btn-danger'
-  },
-  buttonsStyling: false //cambiarlo a false cuando se vincule con boostrap
-})
 
 @Component({
   selector: "crud-usuarios",
@@ -118,31 +111,42 @@ export class CrudUsuariosComponent implements OnInit {
     });
   }
 
+  nuevocliente(): void {
+    this.dialog.open(NuevoclieDialog, {
+      width: '50%',
+      height: "auto",
+    });
+  }
+
+  nuevomeca():void {
+    this.dialog.open(NuevoMecaDialog,{
+      width: "50%",
+      height: "auto",
+    });
+  }
+
+  clienteVehi():void {
+    this.dialog.open(clienteVehiDialog,{
+      width: "50%",
+      height:"auto"
+    })
+  }
+
+
 
   prueba(){
-    swalWithBootstrapButtons.fire({
-      title: 'Eliminar',
-      text: "¿Estás deguro de remover este elemento?",
+    Swal.fire({
+      text: "¿Seguro desea eliminar este registro?",
       icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Si, remover!',
-      cancelButtonText: 'No, cancelar!',
-      reverseButtons: true
+      confirmButtonColor: 'green',
+      confirmButtonText: 'Si, eliminar'
     }).then((result) => {
       if (result.isConfirmed) {
-        swalWithBootstrapButtons.fire(
-          'Eliminado!',
-          'El elemneto se ha eliminado con exito.',
-          'success'
-        )
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire(
-          'Cancelado',
-          'El proceso se ha cancelado',
-          'error'
+        Swal.fire(
+          "",
+          'Registro eliminado con exito',
+          'success',
+          
         )
       }
     })
@@ -164,4 +168,28 @@ export class EditarDialog {
   constructor(public dialogRef: MatDialogRef<EditarDialog>) {}
 }
 
-//alertas
+@Component({
+  selector: 'nuevo-clie',
+  templateUrl: 'nuevo-clie.html',
+})
+export class NuevoclieDialog {
+  constructor(public dialogRef: MatDialogRef<NuevoclieDialog>) {}
+}
+
+@Component({
+  selector: 'nuevo-meca',
+  templateUrl: 'nuevo-meca.html',
+})
+export class NuevoMecaDialog {
+  constructor(public dialogRef: MatDialogRef<NuevoMecaDialog>) {}
+}
+
+@Component({
+  selector: 'cliente-vehi',
+  templateUrl: 'cliente-vehi.html',
+})
+export class clienteVehiDialog {
+  constructor(public dialogRef: MatDialogRef<clienteVehiDialog>) {}
+}
+
+
