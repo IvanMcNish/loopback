@@ -24,4 +24,15 @@ export class RequestBackendService {
 
     return this.http.post(this.url + entity, datos, httpOptions);
   }
+
+  updateData(entity: string, datos: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-type': 'application/json',
+    });
+    const httpOptions = {
+      headers,
+    };
+
+    return this.http.post(this.url + entity, datos, httpOptions);
+  }
 }
