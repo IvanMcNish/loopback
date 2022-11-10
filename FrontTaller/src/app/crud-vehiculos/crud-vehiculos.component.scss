@@ -1,0 +1,39 @@
+.cls-content-page {
+    // padding: 10px 35px;
+
+    table {
+        width: 100%;
+    }
+}
+
+.cls-mayor {
+    background: red;
+    border-radius: 10px;
+    // padding: 30px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.cls-menor {
+    background: green;
+    border-radius: 10px;
+    // padding: 30px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding: 10px 20px;
+}
+
+.cls-icon{
+    margin: 0 20px; 
+    cursor: pointer;   
+}
+table{
+    text-align: center;
+    th{
+        text-align: center;
+    }
+}
