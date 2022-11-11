@@ -70,7 +70,7 @@ justify-content: flex-end;">
         <th mat-header-cell *matHeaderCellDef> Gestión </th>
         <td mat-cell *matCellDef="let element">
 
-          <mat-icon class="cls-icon" (click)="prueba()" style="color: red;">delete_forever</mat-icon>
+          <mat-icon class="cls-icon" (click)="deleteVahiculo(element.idPlaca)" style="color: red;">delete_forever</mat-icon>
           <mat-icon class="cls-icon" (click)="editar()" style="color: green;">edit</mat-icon>
           <mat-icon class="cls-icon" (click)="trabajo()" style="color: blue;">settings</mat-icon>
           

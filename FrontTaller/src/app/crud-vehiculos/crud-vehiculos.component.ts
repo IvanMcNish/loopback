@@ -114,21 +114,30 @@ export class CrudVehiculosComponent implements OnInit {
   }  
 
 
-  prueba(){Swal.fire({
-    text: "¿Seguro desea eliminar este registro?",
-    icon: 'warning',
-    confirmButtonColor: 'green',
-    confirmButtonText: 'Si, eliminar'
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire(
-        "",
-        'Registro eliminado con exito',
-        'success',
-        
-      )
-    }
-  })
+  deleteVahiculo(code: string): void {
+    Swal.fire({
+      text: "¿Seguro desea eliminar este registro?",
+      icon: "warning",
+      confirmButtonColor: "green",
+      confirmButtonText: "Si, eliminar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.servicioBackend.deleteData("vehiculos", code).subscribe({
+          next: (data) => {
+            console.log(data);
+            this.getUsers();
+            Swal.fire("Ok", "Registro eliminado con exito", "success");
+          },
+          error: (error) => {
+            console.log(error);
+            Swal.fire("Usuario no eliminado", "Ocurrio un error", "error");
+          },
+          complete: () => {
+            console.log("complete");
+          },
+        });
+      }
+    });
   }
 
   nuevovehi(): void {

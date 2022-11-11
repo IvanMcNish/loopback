@@ -35,4 +35,10 @@ export class RequestBackendService {
 
     return this.http.post(this.url + entity, datos, httpOptions);
   }
+
+  deleteData(entity:string, code:string):Observable<any>{
+
+
+    return this.http.delete(this.url + entity +'/'+code);
+  }
 }
