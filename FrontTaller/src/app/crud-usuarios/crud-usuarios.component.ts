@@ -15,6 +15,10 @@ import Swal from "sweetalert2";
   styleUrls: ["./crud-usuarios.component.scss"],
 })
 export class CrudUsuariosComponent implements OnInit {
+  btnAbrirModal=document.getElementById("#btnAbrirModal");
+  btnCerrarModal=document.getElementById("#btnCerrarModal");
+
+  modal=document.querySelector("#modal-cliente-nuevo");
 
   //databes
   datos: any = [];
@@ -123,6 +127,9 @@ export class CrudUsuariosComponent implements OnInit {
       height: "auto",
     });
   }
+
+  
+  
 
   nuevocliente(): void {
     this.dialog.open(NuevoclieDialog, {
