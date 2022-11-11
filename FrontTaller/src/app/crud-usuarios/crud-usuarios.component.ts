@@ -8,7 +8,6 @@ import Swal from "sweetalert2";
 
 
 
-
 @Component({
   selector: "crud-usuarios",
   templateUrl: "./crud-usuarios.component.html",
@@ -18,6 +17,8 @@ import Swal from "sweetalert2";
 
 
 export class CrudUsuariosComponent implements OnInit {
+
+
 
   //databes
   datos: any = [];
@@ -37,6 +38,15 @@ export class CrudUsuariosComponent implements OnInit {
 
   constructor(private servicioBackend: RequestBackendService, private fb: FormBuilder, public dialog: MatDialog) {
     this.getUsers();
+
+
+
+
+
+
+
+
+
 
     this.formUser = this.fb.group({
       idPropietario:[""],
@@ -128,7 +138,9 @@ export class CrudUsuariosComponent implements OnInit {
     });
   }
 
-
+  datacliente():void {
+    
+  }
 
   prueba(){
     Swal.fire({

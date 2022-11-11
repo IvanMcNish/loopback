@@ -1,34 +1,4 @@
-<div style="align-items: center;
-display: flex;
-justify-content: flex-end;">
-  <button style="width: 50px;
-  height: 50px;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-    <mat-icon style="    font-size: 34px;
-      width: 100%;">menu</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="nuevocliente()">
-      <mat-icon>group_add</mat-icon>
-      <span>Agregar usuario</span>
-    </button>
-    <button mat-menu-item (click)="nuevomeca()">
-      <mat-icon>nature_people</mat-icon>
-      <span>Agregar mécanico</span>
-    </button>
-    <button mat-menu-item disabled>
-      <mat-icon>add_shopping_cart</mat-icon>
-      <span>Gestionar inventario</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon style="color: #f44336;">exit_to_app</mat-icon>
-      <span>Salir</span>
-    </button>
-  </mat-menu>
-</div>
-
-
-<div>
-  <div style="margin: 15px;">
+<div style="margin: 15px;">
     <div class="cls-content-page">
       <div>
         <mat-form-field appearance="standard">
@@ -42,7 +12,7 @@ justify-content: flex-end;">
 
           <!-- Position Column -->
           <ng-container matColumnDef="idPropietario">
-            <th mat-header-cell *matHeaderCellDef="let element"> Cedula </th>
+            <th mat-header-cell *matHeaderCellDef> Cedula </th>
             <td mat-cell *matCellDef="let element"> {{element.idPropietario}} </td>
           </ng-container>
 
@@ -101,19 +71,4 @@ justify-content: flex-end;">
         </table>
       </div>
     </div>
-  </div>
 </div>
-
-
-<div style="padding: 0 0 0 15px;">
-    <button (click)="datacliente()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button" class="btn btn-outline-success">Clientes</button>
-    <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button" class="btn btn-outline-success">Vehículos</button>
-    <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button" class="btn btn-outline-success">Mecánicos</button>
-    <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;"  type="button" class="btn btn-outline-success">Revisiones</button>
-</div>
-
-<script>
-  $(document).ready(function () {
-    $('.menuContainer').load('./menu.html');
-  });
-</script>
