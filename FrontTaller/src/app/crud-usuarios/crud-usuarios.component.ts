@@ -40,17 +40,10 @@ export class CrudUsuariosComponent implements OnInit {
 
   constructor(
     private servicioBackend: RequestBackendService,
-    private fb: FormBuilder,
+    public fb: FormBuilder,
     public dialog: MatDialog
   ) {
     this.getUsers();
-
-
-
-
-
-
-
 
 
 
@@ -59,7 +52,10 @@ export class CrudUsuariosComponent implements OnInit {
       nombre: [""],
       telefono: [""],
       contrasenia: ["111"],
-      sedeId: ["63557cfb71cf34a13bd99ad7"],
+      fechaNacimiento: ["2022-11-11T03:24:13.349Z"],
+      correo: [""],
+      ciudad: [""],
+      sedeId: ["t"],
     });
   }
 
@@ -99,7 +95,7 @@ export class CrudUsuariosComponent implements OnInit {
     console.log(datosUser);
 
     this.servicioBackend
-      .postData("usuarios", JSON.stringify(datosUser))
+      .postData("propietarios", JSON.stringify(datosUser))
       .subscribe({
         next: (data) => {
           console.log(data);
@@ -196,6 +192,7 @@ export class NuevoclieDialog {
       showConfirmButton: true,
     });
   }
+  
 }
 
 @Component({

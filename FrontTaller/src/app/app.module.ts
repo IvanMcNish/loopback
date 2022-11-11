@@ -28,6 +28,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FooterComponent,
     ContentComponent,
     EditorNombreComponent,
-    
+    //NuevoclieDialog,
    
   ],
   imports: [
@@ -58,6 +59,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatFormFieldModule,
     MatMenuModule,
     MatPaginatorModule,
+    FormsModule,
     
     
     
@@ -67,3 +69,4 @@ import {MatPaginatorModule} from '@angular/material/paginator';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+export class AuthorModule {}

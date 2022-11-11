@@ -106,11 +106,88 @@ justify-content: flex-end;">
 
 
 <div style="padding: 0 0 0 15px;">
-    <button  style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button" class="btn btn-outline-success">Clientes</button>
+    <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button" class="btn btn-outline-success">Clientes</button>
     <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button" class="btn btn-outline-success">Vehículos</button>
     <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button" class="btn btn-outline-success">Mecánicos</button>
     <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;"  type="button" class="btn btn-outline-success">Revisiones</button>
 </div>
+<div>
+
+
+        <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formUser" >
+            <div class="col">
+                <label for="validationCustom01" class="form-label">Cedula</label>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" formControlName="idPropietario"  />
+                <div class="invalid-feedback">Campo requerido</div>
+            </div>
+        </div>
+
+        <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formUser">
+            <div class="col">
+                <label for="validationCustom01" class="form-label">Nombre</label>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" formControlName="nombre" id="validationCustom01" required />
+                <div class="invalid-feedback">Campo requerido</div>
+            </div>
+        </div>
+        <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
+            <div class="col">
+                <label for="validationCustom02" class="form-label" >Teléfono</label>
+            </div>
+
+            <div class="col">
+                <input type="text" class="form-control" formControlName="telefono" id="validationCustom02" required />
+                <div class="invalid-feedback">Campo requerido</div>
+            </div>
+        </div>
+
+        <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
+            <div class="col">
+                <label for="validationCustom03" class="form-label" >Fecha de nacimiento</label>
+            </div>
+            <div class="col">
+                <input type="date" class="form-control" id="validationCustom03"  required />
+                <div class="invalid-feedback">Campo requerido.</div>
+            </div>
+        </div>
+
+        <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
+            <div class="col">
+                <label for="validationCustom04" class="form-label" >Ciudad</label>
+            </div>
+
+            <div class="col">
+                <select class="form-select" id="validationCustom04" formControlName="ciudad" required>
+                    <option selected disabled value="">Seleccionar</option>
+                    <option>...</option>
+                </select>
+                <div class="invalid-feedback">Campo requerido.</div>
+            </div>
+        </div>
+        <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
+            <div class="col">
+                <label for="validationCustomUsername" class="form-label">Correo</label>
+            </div>
+
+            <div class="col">
+                <div class="input-group has-validation">
+                    <input type="email" class="form-control" formControlName="correo" id="validationCustomUsername"
+                        aria-describedby="inputGroupPrepend" required />
+                    <div class="invalid-feedback">Campo requerido.</div>
+                </div>
+            </div>
+       
+
+        <div class="col-12">
+          
+            <button (click)="saveUser()"  style="width: 32%;" class="btn btn-outline-success" type="button">Agregar </button>
+          </div> 
+        </div> 
+</div> 
+
 
 <script>
   $(document).ready(function () {
