@@ -2,8 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { MatTableDataSource } from "@angular/material/table";
 import { RequestBackendService } from "./../request-backend.service";
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import Swal from "sweetalert2";
+
 
 
 
@@ -13,17 +14,19 @@ import Swal from "sweetalert2";
   templateUrl: "./crud-usuarios.component.html",
   styleUrls: ["./crud-usuarios.component.scss"],
 })
-
-
-
 export class CrudUsuariosComponent implements OnInit {
-
-
 
   //databes
   datos: any = [];
   nombreUsuarioSeleccionado = "";
-  displayedColumns: string[] = ["idPropietario","nombre", "telefono","correo","ciudad","sedeId","Gestion",
+  displayedColumns: string[] = [
+    "idPropietario",
+    "nombre",
+    "telefono",
+    "correo",
+    "ciudad",
+    "sedeId",
+    "Gestion",
   ];
   dataSource = new MatTableDataSource(this.datos);
   applyFilter(event: Event) {
@@ -35,8 +38,11 @@ export class CrudUsuariosComponent implements OnInit {
 
   formUser: FormGroup = new FormGroup({});
 
-
-  constructor(private servicioBackend: RequestBackendService, private fb: FormBuilder, public dialog: MatDialog) {
+  constructor(
+    private servicioBackend: RequestBackendService,
+    private fb: FormBuilder,
+    public dialog: MatDialog
+  ) {
     this.getUsers();
 
 
@@ -49,7 +55,7 @@ export class CrudUsuariosComponent implements OnInit {
 
 
     this.formUser = this.fb.group({
-      idPropietario:[""],
+      idPropietario: [""],
       nombre: [""],
       telefono: [""],
       contrasenia: ["111"],
@@ -57,8 +63,7 @@ export class CrudUsuariosComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {}
 
   // cambiarTitulo(): void {
   //   this.titulo = 'He cambiado de nombre, ahora me llamo de Maicol';
@@ -81,7 +86,6 @@ export class CrudUsuariosComponent implements OnInit {
       (data) => {
         console.log(data);
         this.datos = data;
-
       },
 
       (error) => {
@@ -112,119 +116,108 @@ export class CrudUsuariosComponent implements OnInit {
 
   //crud de iconos
 
-
   editar(): void {
     this.dialog.open(EditarDialog, {
-      width: '50%',
-      height: "auto",
-      
-    });
-  }
-
-  nuevocliente(): void {
-    this.dialog.open(NuevoclieDialog, {
-      width: '50%',
-      height: "500px",
-
-      
-    });
-
-  }
-
-  nuevomeca():void {
-    this.dialog.open(NuevoMecaDialog,{
       width: "50%",
       height: "auto",
     });
   }
 
-  datacliente():void {
-    
+  nuevocliente(): void {
+    this.dialog.open(NuevoclieDialog, {
+      width: "50%",
+      height: "500px",
+    });
   }
+
+  nuevomeca(): void {
+    this.dialog.open(NuevoMecaDialog, {
+      width: "50%",
+      height: "auto",
+    });
+  }
+
+
 
   prueba(){
     Swal.fire({
       text: "¿Seguro desea eliminar este registro?",
-      icon: 'warning',
-      confirmButtonColor: 'green',
-      confirmButtonText: 'Si, eliminar'
+      icon: "warning",
+      confirmButtonColor: "green",
+      confirmButtonText: "Si, eliminar",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire(
-          "",
-          'Registro eliminado con exito',
-          'success',
-          
-        )
+        this.servicioBackend.deleteData("propietarios", code).subscribe({
+          next: (data) => {
+            console.log(data);
+            this.getUsers();
+            Swal.fire("Ok", "Registro eliminado con exito", "success");
+          },
+          error: (error) => {
+            console.log(error);
+            Swal.fire("Usuario no eliminado", "Ocurrio un error", "error");
+          },
+          complete: () => {
+            console.log("complete");
+          },
+        });
       }
-    })
+    });
   }
-
-  
-  
 
 }
 
-
-
-
-
 @Component({
-  selector: 'editar',
-  templateUrl: 'editar.html',
+  selector: "editar",
+  templateUrl: "editar.html",
 })
 export class EditarDialog {
   constructor(public dialogRef: MatDialogRef<EditarDialog>) {}
   guardar() {
-    Swal.fire({      
-      icon: 'success',
-      title: 'Registro actualizado',
+    Swal.fire({
+      icon: "success",
+      title: "Registro actualizado",
       showConfirmButton: true,
-    })
+    });
   }
 }
 
 @Component({
-  selector: 'nuevo-clie',
-  templateUrl: 'nuevo-clie.html',
+  selector: "nuevo-clie",
+  templateUrl: "nuevo-clie.html",
 })
 export class NuevoclieDialog {
   constructor(public dialogRef: MatDialogRef<NuevoclieDialog>) {}
 
   guardar() {
-    Swal.fire({      
-      icon: 'success',
-      title: 'Registro guardado',
+    Swal.fire({
+      icon: "success",
+      title: "Registro guardado",
       showConfirmButton: true,
-    })
-
+    });
   }
-  
 }
 
 @Component({
-  selector: 'nuevo-meca',
-  templateUrl: 'nuevo-meca.html',
+  selector: "nuevo-meca",
+  templateUrl: "nuevo-meca.html",
 })
 export class NuevoMecaDialog {
   constructor(public dialogRef: MatDialogRef<NuevoMecaDialog>) {}
 
   guardar() {
-    Swal.fire({      
-      icon: 'success',
-      title: 'Registro guardado',
+    Swal.fire({
+      icon: "success",
+      title: "Registro guardado",
       showConfirmButton: true,
-    })
-
+    });
   }
 }
 
 @Component({
-  selector: 'cliente-vehi',
-  templateUrl: 'cliente-vehi.html',
+  selector: "cliente-vehi",
+  templateUrl: "cliente-vehi.html",
 })
 export class clienteVehiDialog {
   constructor(public dialogRef: MatDialogRef<clienteVehiDialog>) {}
 }
-
-
