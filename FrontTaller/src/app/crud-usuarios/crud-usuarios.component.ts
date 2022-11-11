@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 
 
 
+
 @Component({
   selector: "crud-usuarios",
   templateUrl: "./crud-usuarios.component.html",
@@ -128,7 +129,15 @@ export class CrudUsuariosComponent implements OnInit {
     });
   }
 
-  
+  trabajoenprogreso(){
+    Swal.fire({
+      icon: 'info',
+      text:"Esta opción se encuentra en desarrollo",
+      timer:2000,
+      timerProgressBar: true,
+      showConfirmButton: false,
+    })
+  }
   
 
   nuevocliente(): void {

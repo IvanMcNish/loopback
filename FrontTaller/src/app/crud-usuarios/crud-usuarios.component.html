@@ -11,7 +11,7 @@ justify-content: flex-end;">
       <mat-icon>group_add</mat-icon>
       <span>Agregar usuario</span>
     </button>
-    <button mat-menu-item (click)="nuevomeca()">
+    <button mat-menu-item (click)="trabajoenprogreso()">
       <mat-icon>nature_people</mat-icon>
       <span>Agregar mécanico</span>
     </button>
@@ -106,13 +106,13 @@ justify-content: flex-end;">
 </div>
 
 <div style="padding: 0 0 0 15px;">
-  <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
+  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
     class="btn btn-outline-success">Clientes</button>
-  <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
+  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
     class="btn btn-outline-success">Vehículos</button>
-  <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
+  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
     class="btn btn-outline-success">Mecánicos</button>
-  <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
+  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
     class="btn btn-outline-success">Revisiones</button>
 </div>
 
