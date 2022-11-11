@@ -5,12 +5,17 @@ import { RequestBackendService } from "./../request-backend.service";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import Swal from "sweetalert2";
 
+
+
+
+
 @Component({
   selector: "crud-usuarios",
   templateUrl: "./crud-usuarios.component.html",
   styleUrls: ["./crud-usuarios.component.scss"],
 })
 export class CrudUsuariosComponent implements OnInit {
+
   //databes
   datos: any = [];
   nombreUsuarioSeleccionado = "";
@@ -39,6 +44,15 @@ export class CrudUsuariosComponent implements OnInit {
     public dialog: MatDialog
   ) {
     this.getUsers();
+
+
+
+
+
+
+
+
+
 
     this.formUser = this.fb.group({
       idPropietario: [""],
@@ -122,6 +136,8 @@ export class CrudUsuariosComponent implements OnInit {
       height: "auto",
     });
   }
+
+
 
   deleteUser(code: string): void {
     Swal.fire({
