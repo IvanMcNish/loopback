@@ -37,7 +37,7 @@ justify-content: flex-end;">
         </mat-form-field>
       </div>
 
-      <div style="border: solid 1px #7e897e61; overflow: auto; height: 290px; ">
+      <div style="padding: 10px; border: solid 1px #7e897e61; overflow: auto; height: 290px; ">
         <table mat-table [dataSource]="datos" class="mat-elevation-z8">
 
           <!-- Position Column -->
@@ -46,17 +46,17 @@ justify-content: flex-end;">
             <td mat-cell *matCellDef="let element"> {{element.idPropietario}} </td>
           </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef> Nombres </th>
-        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
-      </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombres </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+          </ng-container>
 
-      <!-- Weight Column -->
-      <ng-container matColumnDef="telefono">
-        <th mat-header-cell *matHeaderCellDef> Teléfono </th>
-        <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
-      </ng-container>
+          <!-- Weight Column -->
+          <ng-container matColumnDef="telefono">
+            <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+            <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+          </ng-container>
 
           <!-- Symbol Column -->
           <ng-container matColumnDef="correo">
@@ -82,9 +82,10 @@ justify-content: flex-end;">
 
 
 
-          <mat-icon class="cls-icon" (click)="deleteUser(element.idPropietario)" style="color: red;">delete_forever</mat-icon>
-          <mat-icon class="cls-icon" (click)="editar()" style="color: green;">edit</mat-icon>
-      
+              <mat-icon class="cls-icon" (click)="deleteUser(element.idPropietario)" style="color: red;">delete_forever
+              </mat-icon>
+              <mat-icon class="cls-icon" (click)="editar()" style="color: green;">edit</mat-icon>
+
 
             </td>
 
@@ -106,14 +107,14 @@ justify-content: flex-end;">
 
 
 <div style="padding: 0 0 0 15px;">
-    <button  style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button" class="btn btn-outline-success">Clientes</button>
-    <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button" class="btn btn-outline-success">Vehículos</button>
-    <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button" class="btn btn-outline-success">Mecánicos</button>
-    <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;"  type="button" class="btn btn-outline-success">Revisiones</button>
+  <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
+    class="btn btn-outline-success">Clientes</button>
+  <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
+    class="btn btn-outline-success">Vehículos</button>
+  <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
+    class="btn btn-outline-success">Mecánicos</button>
+  <button style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
+    class="btn btn-outline-success">Revisiones</button>
 </div>
 
-<script>
-  $(document).ready(function () {
-    $('.menuContainer').load('./menu.html');
-  });
-</script>
+<!--<crud-vehiculos></crud-vehiculos>-->
