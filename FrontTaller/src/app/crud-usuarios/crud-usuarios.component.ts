@@ -100,6 +100,11 @@ export class CrudUsuariosComponent implements OnInit {
         next: (data) => {
           console.log(data);
           this.getUsers();
+          Swal.fire({
+            icon: "success",
+            title: "Registro guardado",
+            showConfirmButton: true,
+          });
         },
         error: (error) => {
           console.log(error);
