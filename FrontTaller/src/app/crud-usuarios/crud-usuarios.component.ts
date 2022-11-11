@@ -211,10 +211,4 @@ export class NuevoMecaDialog {
   }
 }
 
-@Component({
-  selector: "cliente-vehi",
-  templateUrl: "cliente-vehi.html",
-})
-export class clienteVehiDialog {
-  constructor(public dialogRef: MatDialogRef<clienteVehiDialog>) {}
-}
+
