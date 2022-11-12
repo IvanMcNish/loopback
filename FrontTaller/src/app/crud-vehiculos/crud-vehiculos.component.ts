@@ -34,18 +34,21 @@ export class CrudVehiculosComponent implements OnInit {
 
   //end-databes
 
-  formUser: FormGroup = new FormGroup({});
+  formVehi: FormGroup = new FormGroup({});
 
 
   constructor(private servicioBackend: RequestBackendService, private fb: FormBuilder, public dialog: MatDialog) {
     this.getUsers();
 
-    this.formUser = this.fb.group({
+    this.formVehi = this.fb.group({
       idPlaca:[""],
       tipo: [""],
       marca: [""],
       cilindraje: [""],
-      propietarioId: ["2022-11-08T00:22:27.812Z"],
+      propietarioId: ["111"],
+      capacidadPasajeros: [2],
+      paisOrigen: ["2"],
+      accesorios: ["2"],
       anio:[""],
       
     });
@@ -78,12 +81,12 @@ export class CrudVehiculosComponent implements OnInit {
     );
   }
 
-  saveUser(): void {
-    const datosUser = this.formUser.getRawValue();
+  saveVehi(): void {
+    const datosUser = this.formVehi.getRawValue();
     console.log(datosUser);
 
     this.servicioBackend
-      .postData("usuarios", JSON.stringify(datosUser))
+      .postData("vehiculos", JSON.stringify(datosUser))
       .subscribe({
         next: (data) => {
           console.log(data);

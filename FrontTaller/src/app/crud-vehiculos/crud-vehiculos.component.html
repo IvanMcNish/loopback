@@ -116,22 +116,22 @@ justify-content: flex-end;">
                   height: 27px;">
                       <h3>Agregar vehiculo</h3>
                   </div>
-                  <div style="    margin: 20px 0 10px;" class="row ">
+                  <div style="    margin: 20px 0 10px;" class="row " [formGroup]="formVehi">
                       <div class="col">
-                          <label for="validationCustom01" class="form-label">Placa</label>
+                          <label for="validationCustom01" class="form-label" >Placa</label>
                       </div>
                       <div class="col">
-                          <input type="text" class="form-control" id="validationCustom01" required />
+                          <input type="text" class="form-control" id="validationCustom01" formControlName="idPlaca" required />
                           <div class="invalid-feedback">Campo requerido</div>
                       </div>
                   </div>
       
-                  <div style="    margin: 5px 0 10px;" class="row ">
+                  <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formVehi">
                       <div class="col">
                           <label for="validationCustom01" class="form-label">Tipo de vehículo</label>
                       </div>
                       <div class="col">
-                          <select class="form-select" id="validationCustom04" required>
+                          <select class="form-select" id="validationCustom04" formControlName="tipo" required>
                               <option selected disabled value="">Seleccionar</option>
                               <option>Campero</option>
                               <option>Bus</option>
@@ -140,12 +140,12 @@ justify-content: flex-end;">
                       </div>
                   </div>
       
-                  <div style="    margin: 5px 0 10px;" class="row ">
+                  <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formVehi">
                       <div class="col">
                           <label for="validationCustom01" class="form-label">Marca</label>
                       </div>
                       <div class="col">
-                          <select class="form-select" id="validationCustom04" required>
+                          <select class="form-select" id="validationCustom04" formControlName="marca" required>
                               <option selected disabled value="">Seleccionar</option>
                               <option>Jeep</option>
                               <option>Mazda</option>
@@ -154,39 +154,39 @@ justify-content: flex-end;">
                           <div class="invalid-feedback">Campo requerido</div>
                       </div>
                   </div>
-                  <div style="    margin: 5px 0 10px;" class="row">
+                  <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
                       <div class="col">
                           <label for="validationCustom02" class="form-label">Modelo</label>
                       </div>
       
                       <div class="col">
-                          <input type="text" class="form-control" id="validationCustom02" required />
+                          <input type="number" class="form-control" id="validationCustom02" formControlName="anio" required />
                           <div class="invalid-feedback">Campo requerido</div>
                       </div>
                   </div>
       
-                  <div style="    margin: 5px 0 10px;" class="row">
+                  <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
                       <div class="col">
                           <label for="validationCustom03" class="form-label">Capacidad</label>
                       </div>
                       <div class="col">
-                          <select class="form-select" id="validationCustom04" required>
+                          <select class="form-select" type="number"  id="validationCustom04" formControlName="capacidadPasajeros" required>
                               <option selected disabled value="">Seleccionar</option>
-                              <option>2</option>
-                              <option>4</option>
-                              <option>6</option>
+                              <option type="number" >2</option>
+                              <option type="number" >4</option>
+                              <option type="number" >6</option>
                           </select>
                           <div class="invalid-feedback">Campo requerido.</div>
                       </div>
                   </div>
       
-                  <div style="    margin: 5px 0 10px;" class="row">
+                  <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
                       <div class="col">
                           <label for="validationCustom04" class="form-label">Cilindraje</label>
                       </div>
       
                       <div class="col">
-                          <select class="form-select" id="validationCustom04" required>
+                          <select class="form-select" id="validationCustom04" formControlName="cilindraje" required>
                               <option selected disabled value="">Seleccionar</option>
                               <option>1600</option>
                               <option>2000</option>
@@ -195,14 +195,14 @@ justify-content: flex-end;">
                       </div>
                   </div>
       
-                  <div style="    margin: 5px 0 10px;" class="row">
+                  <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi" >
                       <div class="col">
                           <label for="validationCustomUsername" class="form-label">Pais</label>
                       </div>
       
                       <div class="col">
                           <div class="input-group has-validation">
-                              <select class="form-select" id="validationCustom04" required>
+                              <select class="form-select" id="validationCustom04" formControlName="paisOrigen" required>
                                   <option selected disabled value="">Seleccionar</option>
                                   <option>EEUU</option>
                                   <option>China</option>
@@ -213,13 +213,13 @@ justify-content: flex-end;">
                       </div>
                   </div>
       
-                  <div style="    margin: 5px 0 10px;" class="row">
+                  <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
                       <div class="col">
                           <label for="validationCustomUsername" class="form-label">Accesorios adicionales?</label>
                       </div>
                       <div class="col">
                           <div class="input-group has-validation">
-                              <select class="form-select" id="validationCustom04" required>
+                              <select class="form-select" id="validationCustom04" formControlName="accesorios" required>
                                   <option selected disabled value="">Seleccionar</option>
                                   <option>Si</option>
                                   <option>No</option>
@@ -235,7 +235,7 @@ justify-content: flex-end;">
         <!--fin del cuerpo del modal-->
       </div>
       <div style="padding: 0 0 10px 10px">
-        <button data-bs-dismiss="modal" (click)="saveUser()" style="width: 32%; ;" class="btn btn-outline-success" type="button">Agregar
+        <button data-bs-dismiss="modal" (click)="saveVehi()" style="width: 32%; ;" class="btn btn-outline-success" type="button">Agregar
         </button>
         <!-- este boton lo que hace es guardar y arrancar el segundo modal
           <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="saveUser()" style="width: 32%; ;" class="btn btn-outline-success" type="button">Agregar
