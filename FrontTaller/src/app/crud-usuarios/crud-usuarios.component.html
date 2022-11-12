@@ -106,14 +106,14 @@ justify-content: flex-end;">
 </div>
 
 <div style="padding: 0 0 0 15px;">
-  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
-    class="btn btn-outline-success">Clientes</button>
-  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
-    class="btn btn-outline-success">Vehículos</button>
-  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
-    class="btn btn-outline-success">Mecánicos</button>
-  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;" type="button"
-    class="btn btn-outline-success">Revisiones</button>
+  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;"
+    type="button" class="btn btn-outline-success">Clientes</button>
+  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;"
+    type="button" class="btn btn-outline-success">Vehículos</button>
+  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;"
+    type="button" class="btn btn-outline-success">Mecánicos</button>
+  <button (click)="trabajoenprogreso()" style=" margin-inline: 6px; height: 28px; width: 84px; padding: 3px;"
+    type="button" class="btn btn-outline-success">Revisiones</button>
 </div>
 
 
@@ -220,7 +220,8 @@ justify-content: flex-end;">
         <!--fin del cuerpo del modal-->
       </div>
       <div style="padding: 0 0 10px 10px">
-        <button data-bs-dismiss="modal" (click)="saveUser()" style="width: 32%; ;" class="btn btn-outline-success" type="button">Agregar
+        <button data-bs-dismiss="modal" (click)="saveUser()" style="width: 32%; ;" class="btn btn-outline-success"
+          type="button">Agregar
         </button>
         <!-- este boton lo que hace es guardar y arrancar el segundo modal
           <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="saveUser()" style="width: 32%; ;" class="btn btn-outline-success" type="button">Agregar
@@ -234,9 +235,11 @@ justify-content: flex-end;">
 
 
 
+
+
 <!---------------------esto abre el modal de lo vehiculos-->
 <!-- Modal 
-  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div [(ngModel)]="CrudUsuariosComponent" class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -244,6 +247,127 @@ justify-content: flex-end;">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          <div>
+          <div>
+            <form class="row g-3 needs-validation" novalidate>
+
+              <div style="    background: blue;
+                  color: white;
+                  height: 27px;">
+                <h3>Agregar vehiculo</h3>
+              </div>
+              <div style="    margin: 20px 0 10px;" class="row " [formGroup]="formVehi">
+                <div class="col">
+                  <label for="validationCustom01" class="form-label">Placa</label>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" id="validationCustom01" formControlName="idPlaca" required />
+                  <div class="invalid-feedback">Campo requerido</div>
+                </div>
+              </div>
+
+              <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formVehi">
+                <div class="col">
+                  <label for="validationCustom01" class="form-label">Tipo de vehículo</label>
+                </div>
+                <div class="col">
+                  <select class="form-select" id="validationCustom04" formControlName="tipo" required>
+                    <option selected disabled value="">Seleccionar</option>
+                    <option>Campero</option>
+                    <option>Bus</option>
+                  </select>
+                  <div class="invalid-feedback">Campo requerido</div>
+                </div>
+              </div>
+
+              <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formVehi">
+                <div class="col">
+                  <label for="validationCustom01" class="form-label">Marca</label>
+                </div>
+                <div class="col">
+                  <select class="form-select" id="validationCustom04" formControlName="marca" required>
+                    <option selected disabled value="">Seleccionar</option>
+                    <option>Jeep</option>
+                    <option>Mazda</option>
+                    <option>Ford</option>
+                  </select>
+                  <div class="invalid-feedback">Campo requerido</div>
+                </div>
+              </div>
+              <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
+                <div class="col">
+                  <label for="validationCustom02" class="form-label">Modelo</label>
+                </div>
+
+                <div class="col">
+                  <input type="number" class="form-control" id="validationCustom02" formControlName="anio" required />
+                  <div class="invalid-feedback">Campo requerido</div>
+                </div>
+              </div>
+
+              <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
+                <div class="col">
+                  <label for="validationCustom03" class="form-label">Capacidad</label>
+                </div>
+                <div class="col">
+                  <input type="number" class="form-control" id="validationCustom02" formControlName="capacidadPasajeros"
+                    required />
+                  <div class="invalid-feedback">Campo requerido.</div>
+                </div>
+              </div>
+
+              <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
+                <div class="col">
+                  <label for="validationCustom04" class="form-label">Cilindraje</label>
+                </div>
+
+                <div class="col">
+                  <select class="form-select" id="validationCustom04" formControlName="cilindraje" required>
+                    <option selected disabled value="">Seleccionar</option>
+                    <option>1600</option>
+                    <option>2000</option>
+                  </select>
+                  <div class="invalid-feedback">Campo requerido.</div>
+                </div>
+              </div>
+
+              <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
+                <div class="col">
+                  <label for="validationCustomUsername" class="form-label">Pais</label>
+                </div>
+
+                <div class="col">
+                  <div class="input-group has-validation">
+                    <select class="form-select" id="validationCustom04" formControlName="paisOrigen" required>
+                      <option selected disabled value="">Seleccionar</option>
+                      <option>EEUU</option>
+                      <option>China</option>
+                      <option>Artico</option>
+                    </select>
+                    <div class="invalid-feedback">Campo requerido.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
+                <div class="col">
+                  <label for="validationCustomUsername" class="form-label">Accesorios adicionales?</label>
+                </div>
+                <div class="col">
+                  <div class="input-group has-validation">
+                    <select class="form-select" id="validationCustom04" formControlName="accesorios" required>
+                      <option selected disabled value="">Seleccionar</option>
+                      <option>Si</option>
+                      <option>No</option>
+                      <option>No lo sé, tu dime</option>
+                    </select>
+                    <div class="invalid-feedback">Campo requerido.</div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
@@ -251,5 +375,5 @@ justify-content: flex-end;">
       </div>
     </div>
   </div>
-  -->
+ 
 <!---------------------esto abre el modal de lo vehiculos-->

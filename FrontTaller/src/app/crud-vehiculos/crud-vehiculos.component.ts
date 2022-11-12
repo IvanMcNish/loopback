@@ -46,7 +46,7 @@ export class CrudVehiculosComponent implements OnInit {
       marca: [""],
       cilindraje: [""],
       propietarioId: ["111"],
-      capacidadPasajeros: [2],
+      capacidadPasajeros:[],
       paisOrigen: ["2"],
       accesorios: ["2"],
       anio:[""],
@@ -91,6 +91,11 @@ export class CrudVehiculosComponent implements OnInit {
         next: (data) => {
           console.log(data);
           this.getUsers();
+          Swal.fire({
+            icon: "success",
+            title: "Registro guardado",
+            showConfirmButton: true,
+          });
         },
         error: (error) => {
           console.log(error);
