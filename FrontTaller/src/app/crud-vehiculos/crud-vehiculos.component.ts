@@ -1,20 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { MatTableDataSource } from "@angular/material/table";
-import { RequestBackendService } from "./../request-backend.service";
+import { RequestBackendService } from "../request-backend.service";
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import Swal from "sweetalert2";
 
 
 
-const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success ',
-    cancelButton: 'btn btn-danger'
-  },
-  buttonsStyling: false //cambiarlo a false cuando se vincule con boostrap
-})
 @Component({
   selector: 'crud-vehiculos',
   templateUrl: './crud-vehiculos.component.html',
@@ -148,16 +141,6 @@ export class CrudVehiculosComponent implements OnInit {
     });
   }
 
-  nuevovehi(): void {
-    this.dialog.open(NuevoVehiDialog, {
-      width: '50%',
-      height: "500px",
-
-      
-    });
-
-  }
-
 }
 
 
@@ -179,20 +162,3 @@ export class EditarDialog {
   }
 }
 
-@Component({
-  selector: 'nuevovehiculo',
-  templateUrl: 'nuevovehiculo.html',
-})
-export class NuevoVehiDialog {
-  constructor(public dialogRef: MatDialogRef<NuevoVehiDialog>) {}
-
-  guardar() {
-    Swal.fire({      
-      icon: 'success',
-      title: 'Registro guardado',
-      showConfirmButton: true,
-    })
-
-  }
-  
-}

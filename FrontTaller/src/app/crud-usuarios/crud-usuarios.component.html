@@ -131,115 +131,115 @@ justify-content: flex-end;">
       <div class="modal-body">
         <!--cuerpor del from-->
         <div>
+          <form action="" class="row g-3 needs-validation"  novalidate>
 
-          <div style="    margin: 5px 0 10px;" class="row">
-            <div class="col">
-              <label for="validationCustom01" class="form-label">Tipo de documento</label>
-            </div>
-            <div class="col">
-              <select class="form-select" id="validationCustom04" required>
-                <option selected disabled value="">Seleccionar</option>
-                <option>CC</option>
-                <option>Pasasporte</option>
-              </select>
-              <div class="invalid-feedback">Campo requerido</div>
-            </div>
-          </div>
-
-          <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formUser">
-            <div class="col">
-              <label for="validationCustom01" class="form-label">Cedula</label>
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" formControlName="idPropietario" />
-              <div class="invalid-feedback">Campo requerido</div>
-            </div>
-          </div>
-
-          <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formUser">
-            <div class="col">
-              <label for="validationCustom01" class="form-label">Nombre</label>
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" formControlName="nombre" id="validationCustom01" required />
-              <div class="invalid-feedback">Campo requerido</div>
-            </div>
-          </div>
-
-          <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
-            <div class="col">
-              <label for="validationCustom02" class="form-label">Teléfono</label>
+            <div style="    margin: 5px 0 10px;" class="row">
+              <div class="col">
+                <label for="validationCustom01" class="form-label">Tipo de documento</label>
+              </div>
+              <div class="col">
+                <select class="form-select" id="validationCustom01" required>
+                  <option selected disabled value="">Seleccionar</option>
+                  <option>CC</option>
+                  <option>Pasasporte</option>
+                </select>
+                <div class="invalid-feedback">Campo requerido</div>
+              </div>
             </div>
 
-            <div class="col">
-              <input type="text" class="form-control" formControlName="telefono" id="validationCustom02" required />
-              <div class="invalid-feedback">Campo requerido</div>
-            </div>
-          </div>
-
-          <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
-            <div class="col">
-              <label for="validationCustom03" class="form-label">Fecha de nacimiento</label>
-            </div>
-            <div class="col">
-              <input type="date" class="form-control" id="validationCustom03" required />
-              <div class="invalid-feedback">Campo requerido.</div>
-            </div>
-          </div>
-
-          <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
-            <div class="col">
-              <label for="validationCustom04" class="form-label">Ciudad</label>
+            <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formUser">
+              <div class="col">
+                <label for="validationCustom02" class="form-label">Cedula</label>
+              </div>
+              <div class="col">
+                <input id="validationCustom02" type="text" class="form-control" formControlName="idPropietario" required/>
+                <div class="invalid-feedback">Campo requerido</div>
+              </div>
             </div>
 
-            <div class="col">
-              <select class="form-select" id="validationCustom04" formControlName="ciudad" required>
-                <option selected disabled value="">Seleccionar</option>
-                <option>...</option>
-              </select>
-              <div class="invalid-feedback">Campo requerido.</div>
-            </div>
-          </div>
-
-          <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
-            <div class="col">
-              <label for="validationCustomUsername" class="form-label">Correo</label>
+            <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formUser">
+              <div class="col">
+                <label for="validationCustom03" class="form-label">Nombre</label>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" formControlName="nombre" id="validationCustom03" required />
+                <div class="invalid-feedback">Campo requerido</div>
+              </div>
             </div>
 
-            <div class="col">
-              <div class="input-group has-validation">
-                <input type="email" class="form-control" formControlName="correo" id="validationCustomUsername"
-                  aria-describedby="inputGroupPrepend" required />
+            <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
+              <div class="col">
+                <label for="validationCustom04" class="form-label">Teléfono</label>
+              </div>
+
+              <div class="col">
+                <input type="text" class="form-control" formControlName="telefono" id="validationCustom04" required />
+                <div class="invalid-feedback">Campo requerido</div>
+              </div>
+            </div>
+
+            <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
+              <div class="col">
+                <label for="validationCustom05" class="form-label">Fecha de nacimiento</label>
+              </div>
+              <div class="col">
+                <input type="date" class="form-control" id="validationCustom05" required />
                 <div class="invalid-feedback">Campo requerido.</div>
               </div>
             </div>
 
-          </div>
+            <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
+              <div class="col">
+                <label for="validationCustom06" class="form-label">Ciudad</label>
+              </div>
 
+              <div class="col">
+                <select class="form-select" id="validationCustom06" formControlName="ciudad" required>
+                  <option selected disabled value="">Seleccionar</option>
+                  <option>Medellín</option>
+                  <option>Bogotá</option>
+                  <option>Barranquilla</option>
+                </select>
+                <div class="invalid-feedback">Campo requerido.</div>
+              </div>
+            </div>
+
+            <div style="margin: 5px 0 10px;" class="row" [formGroup]="formUser">
+              <div class="col">
+                <label for="validationCustom07" class="form-label">Correo</label>
+              </div>
+
+              <div class="col">
+                <div class="input-group has-validation">
+                  <input type="email" class="form-control" formControlName="correo" id="validationCustom07"
+                    aria-describedby="inputGroupPrepend" required />
+                  <div class="invalid-feedback">Campo requerido.</div>
+                </div>
+              </div>
+
+            </div>
+
+            <div style="padding: 0 0 10px 10px">
+              <button type="submit" data-bs-dismiss="modal" (click)="saveUser()" style="width: 32%; ;" class="btn btn-outline-success"
+                >Agregar
+              </button>
+              <!-- este boton lo que hace es guardar y arrancar el segundo modal
+                <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="saveUser()" style="width: 32%; ;" class="btn btn-outline-success" type="button">Agregar
+              </button>
+              -->
+            </div>
+
+          </form>
         </div>
         <!--fin del cuerpo del modal-->
       </div>
-      <div style="padding: 0 0 10px 10px">
-        <button data-bs-dismiss="modal" (click)="saveUser()" style="width: 32%; ;" class="btn btn-outline-success"
-          type="button">Agregar
-        </button>
-        <!-- este boton lo que hace es guardar y arrancar el segundo modal
-          <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="saveUser()" style="width: 32%; ;" class="btn btn-outline-success" type="button">Agregar
-        </button>
-        -->
-      </div>
+      
     </div>
   </div>
 </div>
 <!-----esto abre el primero modal el de registro de cliente-->
-
-
-
-
-
-<!---------------------esto abre el modal de lo vehiculos-->
-<!-- Modal 
-  <div [(ngModel)]="CrudUsuariosComponent" class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+<!---
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -256,7 +256,7 @@ justify-content: flex-end;">
                   height: 27px;">
                 <h3>Agregar vehiculo</h3>
               </div>
-              <div style="    margin: 20px 0 10px;" class="row " [formGroup]="formVehi">
+              <div style="    margin: 20px 0 10px;" class="row ">
                 <div class="col">
                   <label for="validationCustom01" class="form-label">Placa</label>
                 </div>
@@ -266,7 +266,7 @@ justify-content: flex-end;">
                 </div>
               </div>
 
-              <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formVehi">
+              <div style="    margin: 5px 0 10px;" class="row ">
                 <div class="col">
                   <label for="validationCustom01" class="form-label">Tipo de vehículo</label>
                 </div>
@@ -280,7 +280,7 @@ justify-content: flex-end;">
                 </div>
               </div>
 
-              <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formVehi">
+              <div style="    margin: 5px 0 10px;" class="row ">
                 <div class="col">
                   <label for="validationCustom01" class="form-label">Marca</label>
                 </div>
@@ -294,7 +294,7 @@ justify-content: flex-end;">
                   <div class="invalid-feedback">Campo requerido</div>
                 </div>
               </div>
-              <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
+              <div style="    margin: 5px 0 10px;" class="row" >
                 <div class="col">
                   <label for="validationCustom02" class="form-label">Modelo</label>
                 </div>
@@ -305,7 +305,7 @@ justify-content: flex-end;">
                 </div>
               </div>
 
-              <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
+              <div style="    margin: 5px 0 10px;" class="row" >
                 <div class="col">
                   <label for="validationCustom03" class="form-label">Capacidad</label>
                 </div>
@@ -316,7 +316,7 @@ justify-content: flex-end;">
                 </div>
               </div>
 
-              <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
+              <div style="    margin: 5px 0 10px;" class="row" >
                 <div class="col">
                   <label for="validationCustom04" class="form-label">Cilindraje</label>
                 </div>
@@ -331,7 +331,7 @@ justify-content: flex-end;">
                 </div>
               </div>
 
-              <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
+              <div style="    margin: 5px 0 10px;" class="row" >
                 <div class="col">
                   <label for="validationCustomUsername" class="form-label">Pais</label>
                 </div>
@@ -349,7 +349,7 @@ justify-content: flex-end;">
                 </div>
               </div>
 
-              <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formVehi">
+              <div style="    margin: 5px 0 10px;" class="row" >
                 <div class="col">
                   <label for="validationCustomUsername" class="form-label">Accesorios adicionales?</label>
                 </div>
@@ -374,6 +374,27 @@ justify-content: flex-end;">
         </div>
       </div>
     </div>
-  </div>
- 
-<!---------------------esto abre el modal de lo vehiculos-->
+</div>
+-->
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>

@@ -16,11 +16,6 @@ import Swal from "sweetalert2";
   styleUrls: ["./crud-usuarios.component.scss"],
 })
 export class CrudUsuariosComponent implements OnInit {
-  btnAbrirModal=document.getElementById("#btnAbrirModal");
-  btnCerrarModal=document.getElementById("#btnCerrarModal");
-
-  modal=document.querySelector("#modal-cliente-nuevo");
-
   //databes
   datos: any = [];
   nombreUsuarioSeleccionado = "";
@@ -69,6 +64,8 @@ export class CrudUsuariosComponent implements OnInit {
   // cambiarTitulo(): void {
   //   this.titulo = 'He cambiado de nombre, ahora me llamo de Maicol';
   // }
+
+  
 
   focusBuscar(): void {
     console.log("hizo focus");
@@ -140,13 +137,6 @@ export class CrudUsuariosComponent implements OnInit {
   }
   
 
-  nuevocliente(): void {
-    this.dialog.open(NuevoclieDialog, {
-      width: "50%",
-      height: "500px",
-    });
-  }
-
   nuevomeca(): void {
     this.dialog.open(NuevoMecaDialog, {
       width: "50%",
@@ -197,23 +187,6 @@ export class EditarDialog {
       showConfirmButton: true,
     });
   }
-}
-
-@Component({
-  selector: "nuevo-clie",
-  templateUrl: "nuevo-clie.html",
-})
-export class NuevoclieDialog {
-  constructor(public dialogRef: MatDialogRef<NuevoclieDialog>) {}
-
-  guardar() {
-    Swal.fire({
-      icon: "success",
-      title: "Registro guardado",
-      showConfirmButton: true,
-    });
-  }
-  
 }
 
 @Component({
