@@ -59,7 +59,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatFormFieldModule,
     MatMenuModule,
     MatPaginatorModule,
-    FormsModule,
+
     
     
     
