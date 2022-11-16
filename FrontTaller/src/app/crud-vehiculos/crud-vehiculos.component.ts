@@ -15,6 +15,7 @@ import Swal from "sweetalert2";
 })
 export class CrudVehiculosComponent implements OnInit {
   //databes
+  //crear las variables para el display
   datos: any = [];
   nombreUsuarioSeleccionado = "";
   displayedColumns: string[] = ["idPlaca","tipo", "marca", "cilindraje", "propietarioId","anio", "Gestion",
