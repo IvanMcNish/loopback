@@ -23,6 +23,8 @@ import { MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { LoginComponent } from './login/login.component';
+import { CrudMecanicoComponent } from './crud-mecanico/crud-mecanico.component';
 
 
 
@@ -40,6 +42,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FooterComponent,
     ContentComponent,
     EditorNombreComponent,
+    LoginComponent,
+    CrudMecanicoComponent,
     //NuevoclieDialog,
    
   ],
