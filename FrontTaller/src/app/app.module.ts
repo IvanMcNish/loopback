@@ -25,6 +25,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { LoginComponent } from './login/login.component';
 import { CrudMecanicoComponent } from './crud-mecanico/crud-mecanico.component';
+import { CrudRevisionesComponent } from './crud-revisiones/crud-revisiones.component';
 
 
 
@@ -44,6 +45,7 @@ import { CrudMecanicoComponent } from './crud-mecanico/crud-mecanico.component';
     EditorNombreComponent,
     LoginComponent,
     CrudMecanicoComponent,
+    CrudRevisionesComponent,
     //NuevoclieDialog,
    
   ],

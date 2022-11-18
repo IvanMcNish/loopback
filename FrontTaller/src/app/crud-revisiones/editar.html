@@ -1,0 +1,84 @@
+<div>
+    <h3>Actualizar usuario</h3>
+  </div>
+  <div>
+    <form class="row g-3 needs-validation" novalidate>
+  
+      <div style="    margin: 20px 0 10px;" class="row ">
+        <div class="col">
+          <label for="validationCustom01" class="form-label">Cedula</label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" id="validationCustom01" required />
+          <div class="invalid-feedback">Campo requerido</div>
+        </div>
+      </div>
+  
+      <div style="    margin: 5px 0 10px;" class="row">
+        <div class="col">
+          <label for="validationCustom02" class="form-label">Nombre</label>
+        </div>
+  
+        <div class="col">
+          <input type="text" class="form-control" id="validationCustom02" required />
+          <div class="invalid-feedback">Campo requerido</div>
+        </div>
+      </div>
+  
+      <div style="    margin: 5px 0 10px;" class="row">
+        <div class="col">
+          <label for="validationCustomUsername" class="form-label">Teléfono</label>
+        </div>
+        <div class="col">
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+              required />
+            <div class="invalid-feedback">Campo requerido.</div>
+          </div>
+        </div>
+      </div>
+  
+      <div style="    margin: 5px 0 10px;" class="row">
+        <div class="col">
+          <label for="validationCustom03" class="form-label">Correo electronico</label>
+        </div>
+        <div class="col">
+          <input type="email" class="form-control" id="validationCustom03" required />
+          <div class="invalid-feedback">Campo requerido.</div>
+        </div>
+      </div>
+  
+      <div style="    margin: 5px 0 10px;" class="row">
+        <div class="col">
+          <label for="validationCustom04" class="form-label">Ciudad</label>
+        </div>
+        <div class="col">
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Seleccionar.</option>
+            <option>Barranquilla</option>
+            <option>Bogotá</option>
+          </select>
+          <div class="invalid-feedback">Campo requerido.</div>
+        </div>      
+      </div>
+  
+      <div style="    margin: 5px 0 10px;" class="row">
+        <div class="col">
+          <label for="validationCustom04" class="form-label">Sede asignada</label>
+        </div>
+  
+        <div class="col">
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Seleccionar.</option>
+            <option>Sede-Barranquilla</option>
+            <option>Sede-Bogotá</option>
+          </select>
+          <div class="invalid-feedback">Campo requerido.</div>
+        </div>      
+      </div>
+  
+      <div class="col-12">
+        <button (click)="guardar()" class="btn btn-primary" type="button">Actualizar </button>
+      </div>
+    </form>
+  </div>
