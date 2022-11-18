@@ -9,16 +9,9 @@ justify-content: flex-end;">
   <mat-menu #menu="matMenu">
     <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" mat-menu-item>
       <mat-icon>group_add</mat-icon>
-      <span>Agregar usuario</span>
+      <span>Agregar Revision</span>
     </button>
-    <button mat-menu-item (click)="trabajoenprogreso()">
-      <mat-icon>nature_people</mat-icon>
-      <span>Agregar mécanico</span>
-    </button>
-    <button mat-menu-item disabled>
-      <mat-icon>add_shopping_cart</mat-icon>
-      <span>Gestionar inventario</span>
-    </button>
+
     <button mat-menu-item>
       <mat-icon style="color: #f44336;">exit_to_app</mat-icon>
       <span>Salir</span>
@@ -143,85 +136,66 @@ justify-content: flex-end;">
         <div>
           <form action="" class="row g-3 needs-validation"  novalidate>
 
-            <div style="    margin: 5px 0 10px;" class="row">
+            <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formUser">
               <div class="col">
-                <label for="validationCustom01" class="form-label">Tipo de documento</label>
-              </div>
+                <label for="validationCustom02" class="form-label">ID</label>
+              </div><
               <div class="col">
-                <select class="form-select" id="validationCustom01" required>
-                  <option selected disabled value="">Seleccionar</option>
-                  <option>CC</option>
-                  <option>Pasaporte</option>
-                </select>
+                <input id="validationCustom02" type="text" class="form-control" formControlName="idRevision" required/>
                 <div class="invalid-feedback">Campo requerido</div>
               </div>
             </div>
 
             <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formUser">
               <div class="col">
-                <label for="validationCustom02" class="form-label">Cedula</label>
+                <label for="validationCustom03" class="form-label">Fecha</label>
               </div>
               <div class="col">
-                <input id="validationCustom02" type="text" class="form-control" formControlName="idPropietario" required/>
-                <div class="invalid-feedback">Campo requerido</div>
-              </div>
-            </div>
-
-            <div style="    margin: 5px 0 10px;" class="row " [formGroup]="formUser">
-              <div class="col">
-                <label for="validationCustom03" class="form-label">Nombre</label>
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" formControlName="nombre" id="validationCustom03" required />
+                <input type="date" class="form-control" formControlName="fecha" id="validationCustom03" required />
                 <div class="invalid-feedback">Campo requerido</div>
               </div>
             </div>
 
             <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
               <div class="col">
-                <label for="validationCustom04" class="form-label">Teléfono</label>
+                <label for="validationCustom04" class="form-label">Estado</label>
               </div>
 
               <div class="col">
-                <input type="text" class="form-control" formControlName="telefono" id="validationCustom04" required />
+                <input type="text" class="form-control" formControlName="estado" id="validationCustom04" required />
                 <div class="invalid-feedback">Campo requerido</div>
               </div>
             </div>
 
             <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
               <div class="col">
-                <label for="validationCustom05" class="form-label">Fecha de nacimiento</label>
+                <label for="validationCustom05" class="form-label">Observaciones</label>
               </div>
               <div class="col">
-                <input type="date" class="form-control" id="validationCustom05" required />
+                <input type="text" class="form-control" id="validationCustom05" formControlName="observaciones" required />
                 <div class="invalid-feedback">Campo requerido.</div>
               </div>
             </div>
 
             <div style="    margin: 5px 0 10px;" class="row" [formGroup]="formUser">
               <div class="col">
-                <label for="validationCustom06" class="form-label">Ciudad</label>
+                <label for="validationCustom04" class="form-label">ID Vehiculo</label>
               </div>
 
               <div class="col">
-                <select class="form-select" id="validationCustom06" formControlName="ciudad" required>
-                  <option selected disabled value="">Seleccionar</option>
-                  <option>Medellín</option>
-                  <option>Bogotá</option>
-                  <option>Barranquilla</option>
-                </select>
-                <div class="invalid-feedback">Campo requerido.</div>
+                <input type="text" class="form-control" formControlName="vehiculoId" id="validationCustom04" required />
+                <div class="invalid-feedback">Campo requerido</div>
               </div>
             </div>
 
             <div style="margin: 5px 0 10px;" class="row" [formGroup]="formUser">
               <div class="col">
-                <label for="validationCustom07" class="form-label">Correo</label>
+                <label for="validationCustom07" class="form-label">Mecanico ID</label>
               </div>
 
               <div class="col">
                 <div class="input-group has-validation">
-                  <input type="email" class="form-control" formControlName="correo" id="validationCustom07"
+                  <input type="text" class="form-control" formControlName="mecanicoId" id="validationCustom07"
                     aria-describedby="inputGroupPrepend" required />
                   <div class="invalid-feedback">Campo requerido.</div>
                 </div>
