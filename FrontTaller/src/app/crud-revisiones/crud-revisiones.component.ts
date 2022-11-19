@@ -148,7 +148,7 @@ export class CrudRevisionesComponent implements OnInit {
       confirmButtonText: "Si, eliminar",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.servicioBackend.deleteData("revisiones", code).subscribe({
+        this.servicioBackend.deleteData("revisions", code).subscribe({
           next: (data) => {
             console.log(data);
             this.getUsers();
@@ -156,7 +156,7 @@ export class CrudRevisionesComponent implements OnInit {
           },
           error: (error) => {
             console.log(error);
-            Swal.fire("Usuario no eliminado", "Ocurrio un error", "error");
+            Swal.fire("Registro no eliminado", "Ocurrio un error", "error");
           },
           complete: () => {
             console.log("complete");
