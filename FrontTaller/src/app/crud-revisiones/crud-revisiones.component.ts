@@ -32,7 +32,7 @@ export class CrudRevisionesComponent implements OnInit {
 
   //end-databes
 
-  formUser: FormGroup = new FormGroup({});
+  formRevi: FormGroup = new FormGroup({});
 
   constructor(
     private servicioBackend: RequestBackendService,
@@ -43,7 +43,7 @@ export class CrudRevisionesComponent implements OnInit {
 
 
 
-    this.formUser = this.fb.group({
+    this.formRevi = this.fb.group({
       idRevision: [""],
       fecha: ["2022-11-11T03:24:13.349Z"],
       estado: [""],
@@ -87,7 +87,7 @@ export class CrudRevisionesComponent implements OnInit {
   }
 
   saveUser(): void {
-    const datosUser = this.formUser.getRawValue();
+    const datosUser = this.formRevi.getRawValue();
     console.log(datosUser);
 
     this.servicioBackend
@@ -148,7 +148,7 @@ export class CrudRevisionesComponent implements OnInit {
       confirmButtonText: "Si, eliminar",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.servicioBackend.deleteData("revisiones", code).subscribe({
+        this.servicioBackend.deleteData("revisions", code).subscribe({
           next: (data) => {
             console.log(data);
             this.getUsers();
