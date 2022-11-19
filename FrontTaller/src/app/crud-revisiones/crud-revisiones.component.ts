@@ -156,7 +156,7 @@ export class CrudRevisionesComponent implements OnInit {
           },
           error: (error) => {
             console.log(error);
-            Swal.fire("Usuario no eliminado", "Ocurrio un error", "error");
+            Swal.fire("Registro no eliminado", "Ocurrio un error", "error");
           },
           complete: () => {
             console.log("complete");
