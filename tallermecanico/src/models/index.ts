@@ -5,3 +5,4 @@ export * from './jefe-operaciones.model';
 export * from './repuesto.model';
 export * from './notificacion.model';
 export * from './vehiculo.model';export * from './revision.model';
+export * from './credenciales.model';

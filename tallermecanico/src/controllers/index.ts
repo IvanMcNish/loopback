@@ -25,3 +25,4 @@ export * from './repuesto.controller';
 export * from './vehiculo.controller';
 export * from './revision.controller';
 export * from './notificacion.controller';
+export * from './login.controller';

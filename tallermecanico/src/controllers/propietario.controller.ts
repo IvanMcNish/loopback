@@ -1,3 +1,4 @@
+import { authenticate } from '@loopback/authentication';
 import {
   Count,
   CountSchema,
@@ -57,7 +58,7 @@ export class PropietarioController {
   ): Promise<Count> {
     return this.propietarioRepository.count(where);
   }
-
+  @authenticate('admin')
   @get('/propietarios')
   @response(200, {
     description: 'Array of Propietario model instances',

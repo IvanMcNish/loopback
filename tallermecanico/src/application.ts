@@ -9,6 +9,8 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
+import { AuthenticationComponent, registerAuthenticationStrategy } from '@loopback/authentication';
+import { estrategiaAdmin } from './estrategias-auth/admin.strategy';
 
 export {ApplicationConfig};
 
@@ -39,6 +41,11 @@ export class TallermecanicoApplication extends BootMixin(
         extensions: ['.controller.js'],
         nested: true,
       },
+
+      
     };
+
+    registerAuthenticationStrategy(this, estrategiaAdmin);
+    this.component(AuthenticationComponent);
   }
 }
