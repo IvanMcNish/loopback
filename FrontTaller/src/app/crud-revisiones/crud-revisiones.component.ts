@@ -44,9 +44,10 @@ export class CrudRevisionesComponent implements OnInit {
 
 
     this.formRevi = this.fb.group({
-      idRevision: [""],
+      
       fecha: ["2022-11-11T03:24:13.349Z"],
       estado: [""],
+      hora: ["2022-11-19T01:10:56.294Z"],
       observaciones: [""],
       vehiculoId: [""],
       mecanicoId: [""],
